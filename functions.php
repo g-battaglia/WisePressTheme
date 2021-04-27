@@ -1,12 +1,20 @@
 <?php
+
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 
+
+
 add_theme_support('title-tag');
 add_theme_support('widgets');
+
+
+/** 
+ * Unregister unused widgets.
+ */
 
 function my_widgets_init() {
     unregister_widget( 'WP_Widget_Calendar' );
@@ -19,7 +27,7 @@ function my_widgets_init() {
 add_action('widgets_init', 'my_widgets_init');
 
 
-function simplewise_widgets_init()
+function footer_widgets_init()
 {
 
     register_sidebar(
@@ -36,13 +44,13 @@ function simplewise_widgets_init()
 
 }
 
-add_action('widgets_init', 'simplewise_widgets_init');
+add_action('widgets_init', 'footer_widgets_init');
 
 
 
 ######
 
-function simplewise_second_widgets_init()
+function cloudtag_widgets_init()
 {
 
     register_sidebar(
@@ -59,5 +67,5 @@ function simplewise_second_widgets_init()
 
 }
 
-add_action('widgets_init', 'simplewise_second_widgets_init');
+add_action('widgets_init', 'cloudtag_widgets_init');
 
