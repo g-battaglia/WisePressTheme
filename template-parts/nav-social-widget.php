@@ -7,8 +7,8 @@
  * @since Twenty Nineteen 1.0
  */
 
-if (is_active_sidebar('footer_widget')){
-    dynamic_sidebar('footer_widget');
+if (is_active_sidebar('navbar_social_icons')){
+    dynamic_sidebar('navbar_social_icons');
 }
     
     

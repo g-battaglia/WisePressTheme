@@ -11,7 +11,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- AOS Library -->
 
   <script defer src="<?php echo get_template_directory_uri(); ?>/script.js"></script>
-  <title>WiseBlog Theme</title>
+  <title>SimpleWise Theme</title>
 
 </head>
 <body>
@@ -21,11 +21,18 @@
     <div class="main-navbar">
       <div class="upper-nav">
         <div class="navbar-toggler"><i class="fas fa-bars"></i></div>
-        <a class="navbar-social" href="#">
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-pinterest"></i>
-        </a>
+        <div class="navbar-social" href="#">
+          <?php
+            $nav_social_widget_template = locate_template('template-parts/nav-social-widget.php');
+            load_template($nav_social_widget_template);
+          ?>
+          <!-- 
+          Insert those links in the widget:
+          <a href=""><i class="fab fa-tumblr"></i></a>
+          <a href=""><i class="fab fa-instagram"></i></a>
+          <a href=""><i class="fab fa-twitter"></i></a> 
+          -->
+        </div>
         <h1 class="navbar-brand"><a href="">Brand</a></h1>
         <div class="navbar-utilities">
           <div class="navbar-search">

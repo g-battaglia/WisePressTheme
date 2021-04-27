@@ -113,13 +113,24 @@ a {
 }
 .navbar .main-navbar .upper-nav .navbar-social {
   font-size: 1.25rem;
+  display: flex;
+  align-items: center;
 }
-.navbar .main-navbar .upper-nav .navbar-social i {
+.navbar .main-navbar .upper-nav .navbar-social :not(.custom-html-widget *) {
+  display: none;
+}
+.navbar .main-navbar .upper-nav .navbar-social .custom-html-widget {
+  display: inline-block !important;
+  max-height: 2em;
+  max-width: 2em;
+  overflow: hidden;
+}
+.navbar .main-navbar .upper-nav .navbar-social .custom-html-widget i {
   padding-right: 0.5em;
   color: #aaaaaa;
   transition: color 200ms linear;
 }
-.navbar .main-navbar .upper-nav .navbar-social i:hover {
+.navbar .main-navbar .upper-nav .navbar-social .custom-html-widget i:hover {
   color: #f5f3f3;
   transition: color 200ms linear;
 }
