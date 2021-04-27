@@ -3,6 +3,7 @@
   <div class="inner-footer container">
     <div class="footer-top">
       <div class="footer-links">
+      
           <?php
           $footer_widget_template = locate_template('template-parts/footer-widget.php');
           load_template($footer_widget_template);

@@ -51,9 +51,16 @@
         <div class="under-nav__top">
           <i class="fas fa-times close-nav-overlay"></i>
           <h6 class="nav-collapsed__heading">Site Navigation</h6>
-
         </div>
-        <ul class="navbar-links">
+
+        <?php
+          wp_nav_menu(array(
+            'theme_location' => 'navbar_menu',
+            'container'      => '',
+            'items_wrap'     => '<ul class="navbar-links">%3$s</ul>'
+          ));
+        ?>
+        <!-- <ul class="navbar-links">
 
           <li class="menu-item"><a href="index.html">Home</a></li>
 
@@ -83,7 +90,7 @@
             </ul>
           </li>
 
-        </ul>
+        </ul> -->
       </div>
 
     </div>

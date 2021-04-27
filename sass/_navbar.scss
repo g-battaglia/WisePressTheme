@@ -1,264 +1,267 @@
 .navbar {
   background-color: $dark;
-  width: 100vw;
-}
-
-.main-navbar {
-  display: flex;
-  flex-direction: column;
-  color: $light-text;
-
-  a {
-    color: $light-text;
-  }
-
-  .upper-nav {
+  width: 100%;
+  
+  .main-navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    .navbar-social {
-      font-size: 1.25rem;
-
-      i {
-        padding-right: 0.5em;
-        color: $gray-text;
-        transition: color 200ms linear;
-
-        &:hover {
-          color: $light-text;
-          transition: color 200ms linear;
-        }
-      }
-    }
-
-    .navbar-brand {
-      font-family: $title-font;
-      font-weight: 400;
-      font-size: 3rem;
-      letter-spacing: 2px;
+    flex-direction: column;
+    color: $light-text;
+  
+    a {
       color: $light-text;
-      padding: 0.2em;
     }
-
-    .navbar-toggler {
-      display: none;
-    }
-
-    .navbar-utilities {
+  
+    .upper-nav {
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      font-size: 1.25rem;
-
-      .navbar-search {
-        a {
-          color: grey;
-          transition: color 200ms linear;
-
-          &:hover {
-            color: $light-text;
-            transition: color 200ms linear;
-          }
-        }
-
-        span {
-          font-size: 0.75rem;
-          padding: 0 1rem;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-        }
-      }
-
-      .navbar-user {
-        margin-left: 1em;
-
-        .navbar-user__icon {
-          cursor: pointer;
-          padding: 1em;
+  
+      .navbar-social {
+        font-size: 1.25rem;
+  
+        i {
+          padding-right: 0.5em;
           color: $gray-text;
           transition: color 200ms linear;
-
+  
           &:hover {
             color: $light-text;
             transition: color 200ms linear;
           }
         }
-
-        // HERE!
-        .navbar-user__list {
-          position: absolute;
-          z-index: -100;
-          background-color: transparent;
-          box-shadow: none;
-          margin-top: 3em;
-          margin-left: -1.5em;
-          padding: 0.75em 0;
-          font-size: 0.95rem;
-          border-radius: $radius;
+      }
+  
+      .navbar-brand {
+        font-family: $title-font;
+        font-weight: 400;
+        font-size: 3rem;
+        letter-spacing: 2px;
+        color: $light-text;
+        padding: 0.2em;
+      }
+  
+      .navbar-toggler {
+        display: none;
+      }
+  
+      .navbar-utilities {
+        display: flex;
+        align-items: center;
+        font-size: 1.25rem;
+  
+        .navbar-search {
+          a {
+            color: grey;
+            transition: color 200ms linear;
+  
+            &:hover {
+              color: $light-text;
+              transition: color 200ms linear;
+            }
+          }
+  
+          span {
+            font-size: 0.75rem;
+            padding: 0 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+          }
         }
-
-        @media screen and (min-width: map-get($breakpoints, md)) {
-          &:hover {
-            .navbar-user__list {
-              position: absolute;
-              z-index: 100;
-              background-color: $light;
-              box-shadow: $box-shadow;
-              margin-top: 1em;
-              margin-right: 1.5em;
-              padding: 1em;
-              font-size: 0.95rem;
-              border-radius: $radius;
-              transition: all 200ms linear;
-
-              .user-link {
-                margin-bottom: 0.5em;
-
-                a {
+  
+        .navbar-user {
+          margin-left: 1em;
+  
+          .navbar-user__icon {
+            cursor: pointer;
+            padding: 1em;
+            color: $gray-text;
+            transition: color 200ms linear;
+  
+            &:hover {
+              color: $light-text;
+              transition: color 200ms linear;
+            }
+          }
+  
+          // HERE!
+          .navbar-user__list {
+            position: absolute;
+            z-index: -100;
+            background-color: transparent;
+            box-shadow: none;
+            margin-top: 3em;
+            margin-left: -1.5em;
+            padding: 0.75em 0;
+            font-size: 0.95rem;
+            border-radius: $radius;
+          }
+  
+          @media screen and (min-width: map-get($breakpoints, md)) {
+            &:hover {
+              .navbar-user__list {
+                position: absolute;
+                z-index: 100;
+                background-color: $light;
+                box-shadow: $box-shadow;
+                margin-top: 1em;
+                margin-right: 1.5em;
+                padding: 1em;
+                font-size: 0.95rem;
+                border-radius: $radius;
+                transition: all 200ms linear;
+  
+                .user-link {
+                  margin-bottom: 0.5em;
+  
+                  a {
+                    color: rgba($dark, 0.55);
+                    transition: color 200ms linear;
+  
+                    &:hover {
+                      color: $dark-text;
+                      transition: color 200ms linear;
+                    }
+                  }
+                }
+  
+                .log-out {
+                  padding-top: 0.5em;
+                  border-top: 1px solid $grey;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  
+    .under-nav {
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid rgba($grey, 0.1);
+  
+  
+      .under-nav__top {
+        display: none;
+      }
+  
+  
+  
+      .navbar-links {
+        display: flex;
+        align-items: center;
+  
+        a {
+          color: $gray-text;
+        }
+  
+        .menu-item {
+          padding: 1.25em 0;
+  
+          a {
+            padding: 1.25em 2em;
+            transition: color 200ms linear;
+  
+            &:hover {
+              color: $light-text;
+              transition: color 200ms linear;
+            }
+          }
+  
+          .navbar-link__rotate {
+            i {
+              transform: rotate(180deg);
+              transition: transform 200ms linear;
+            }
+          }
+  
+          .sub-menu {
+            position: absolute;
+            z-index: -100;
+            background-color: transparent;
+            box-shadow: none;
+            margin-top: 3em;
+            margin-left: 1em;
+            padding: 0.75em 0;
+            font-size: 0.95rem;
+            border-radius: $radius;
+            transition: all 200ms linear, z-index 1ms;
+      
+            .menu-item {
+              padding: 0.5em 0.5em;
+            }
+      
+            a{
+              padding: 0;
+              display: inline-block;
+              color: transparent;
+              transition: color 200ms linear;
+      
+              &:hover {
+                color: transparent;
+                transition: color 200ms linear;
+              }
+            }
+          }
+        }
+  
+        .menu-item-has-children {
+          i {
+            font-size: 0.5em;
+            padding: 0.5em;
+            transition: all 200ms linear;
+          }
+  
+          // https://stackoverflow.com/questions/31433000/how-do-i-disable-css-hover-in-a-media-query
+          @media screen and (min-width: map-get($breakpoints, md) + 1) {
+            &:hover {
+              a {
+                i {
+                  transform: rotate(180deg);
+                  transition: transform 200ms linear;
+                }
+              }
+  
+              .sub-menu {
+                display: block;
+                margin-top: 1em;
+                z-index: 100;
+                background-color: $light;
+                box-shadow: $box-shadow;
+                margin-left: 1em;
+                padding: 0.75em 0;
+                font-size: 0.95rem;
+                border-radius: $radius;
+                transition: all 200ms linear, z-index 1ms;
+  
+  
+                .menu-item-has-children {
+                  padding: 0.5em 0.5em;
+                }
+  
+                a{
+                  padding: 0 1em;
                   color: rgba($dark, 0.55);
                   transition: color 200ms linear;
-
+  
                   &:hover {
                     color: $dark-text;
                     transition: color 200ms linear;
-                  }
-                }
-              }
-
-              .log-out {
-                padding-top: 0.5em;
-                border-top: 1px solid $grey;
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-  .under-nav {
-    display: flex;
-    justify-content: space-around;
-    border-top: 1px solid rgba($grey, 0.1);
-
-
-    .under-nav__top {
-      display: none;
-    }
-
-    .sub-menu {
-      position: absolute;
-      z-index: -100;
-      background-color: transparent;
-      box-shadow: none;
-      margin-top: 3em;
-      margin-left: 1em;
-      padding: 0.75em 0;
-      font-size: 0.95rem;
-      border-radius: $radius;
-      transition: all 200ms linear, z-index 1ms;
-
-      .dropdown-item {
-        padding: 0.5em 0.5rem;
-      }
-
-      a{
-        padding: 0 2em;
-        color: transparent;
-        transition: color 200ms linear;
-
-        &:hover {
-          color: transparent;
-          transition: color 200ms linear;
-        }
-      }
-    }
-
-    .navbar-links {
-      display: flex;
-      align-items: center;
-
-      a {
-        color: $gray-text;
-      }
-
-      .menu-item {
-        padding: 1.25em 0;
-
-        a {
-          padding: 1.25em 2em;
-          transition: color 200ms linear;
-
-          &:hover {
-            color: $light-text;
-            transition: color 200ms linear;
-          }
-        }
-
-        .navbar-link__rotate {
-          i {
-            transform: rotate(180deg);
-            transition: transform 200ms linear;
-          }
-        }
-      }
-
-      .menu-item-has-children {
-        i {
-          font-size: 0.5em;
-          padding: 0.5em;
-          transition: all 200ms linear;
-        }
-
-        // https://stackoverflow.com/questions/31433000/how-do-i-disable-css-hover-in-a-media-query
-        @media screen and (min-width: map-get($breakpoints, md) + 1) {
-          &:hover {
-            a {
-              i {
-                transform: rotate(180deg);
-                transition: transform 200ms linear;
-              }
-            }
-
-            .sub-menu {
-              display: block;
-              margin-top: 1em;
-              z-index: 100;
-              background-color: $light;
-              box-shadow: $box-shadow;
-              margin-left: 1em;
-              padding: 0.75em 0;
-              font-size: 0.95rem;
-              border-radius: $radius;
-              transition: all 200ms linear, z-index 1ms;
-
-
-              .dropdown-item {
-                padding: 0.5em 0.5rem;
-              }
-
-              a{
-                padding: 0 2em;
-                color: rgba($dark, 0.55);
-                transition: color 200ms linear;
-
-                &:hover {
-                  color: $dark-text;
-                  transition: color 200ms linear;
-
-                  i {
-                    transform: rotate(180deg);
-                    transition: transform 200ms linear;
+  
+                    i {
+                      transform: rotate(180deg);
+                      transition: transform 200ms linear;
+                    }
                   }
                 }
               }
             }
           }
         }
-      }
-
-      .account-collapsed {
-        display: none;
+  
+        .account-collapsed {
+          display: none;
+        }
       }
     }
   }
@@ -360,153 +363,155 @@
 }
 
 @media screen and (max-width: map-get($breakpoints, md)) {
-  .main-navbar {
-    .upper-nav {
-      flex-direction: row-reverse;
-      position: fixed;
-      z-index: 50;
-      top: 0;
-      left: 0;
-      padding: 0 2rem;
-      width: 100vw;
-      background-color: $dark;
-
-      .navbar-toggler {
-        cursor: pointer;
-        display: inline-block;
-        color: $gray-text;
-        font-size: 1.5rem;
-        transition: color 200ms linear;
-
-        &:hover {
-          color: $light-text;
+  .navbar {
+    .main-navbar {
+      .upper-nav {
+        flex-direction: row-reverse;
+        position: fixed;
+        z-index: 50;
+        top: 0;
+        left: 0;
+        padding: 0 2rem;
+        width: 100vw;
+        background-color: $dark;
+  
+        .navbar-toggler {
+          cursor: pointer;
+          display: inline-block;
+          color: $gray-text;
+          font-size: 1.5rem;
           transition: color 200ms linear;
+  
+          &:hover {
+            color: $light-text;
+            transition: color 200ms linear;
+          }
         }
-      }
-
-      .navbar-brand {
-        font-size: 2rem;
-        padding: 0.5em 0;
-      }
-
-      .navbar-social {
-        display: none;
-      }
-
-      .navbar-search {
-        span {
+  
+        .navbar-brand {
+          font-size: 2rem;
+          padding: 0.5em 0;
+        }
+  
+        .navbar-social {
           display: none;
         }
-
-        a {
-          font-size: 1.5rem;
-          // color: $light-text;
+  
+        .navbar-search {
+          span {
+            display: none;
+          }
+  
+          a {
+            font-size: 1.5rem;
+            // color: $light-text;
+          }
+        }
+  
+        .navbar-user {
+          display: none;
         }
       }
-
-      .navbar-user {
-        display: none;
-      }
-    }
-
-    .under-nav {
-      display: block;
-      position: fixed;
-      z-index: 100;
-      top: 0;
-      left: 0;
-      background-color: $dark;
-      height: 100vh !important;
-      overflow: scroll;
-      width: 100vw;
-      transition: opacity 200ms linear;
-      padding-bottom: 4rem;
-      font-size: 1.25rem;
-
-      .under-nav__top {
+  
+      .under-nav {
         display: block;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-        width: 100%;
-        text-align: center;
-        padding: 2em;
-        padding-bottom: 4rem;
-        // border-bottom: 1px solid rgba($grey, 0.1);
-
-        .nav-collapsed__heading {
-          font-size: 1.5rem;
-        }
-
-        i {
-          cursor: pointer;
-          font-size: 1.25rem;
-          padding: 1rem;
-
-        }
-      }
-
-      .navbar-links {
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-        padding: 0 2em;
+        position: fixed;
+        z-index: 100;
+        top: 0;
+        left: 0;
         background-color: $dark;
-
-        .sub-menu {
-          position: static;
-          margin: 0;
-          padding: 1em 1em;
-          position: absolute;
-          z-index: -1;
+        height: 100vh !important;
+        overflow: scroll;
+        width: 100vw;
+        transition: opacity 200ms linear;
+        padding-bottom: 4rem;
+        font-size: 1.25rem;
+  
+        .under-nav__top {
+          display: block;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          width: 100%;
+          text-align: center;
+          padding: 2em;
+          padding-bottom: 4rem;
+          // border-bottom: 1px solid rgba($grey, 0.1);
+  
+          .nav-collapsed__heading {
+            font-size: 1.5rem;
+          }
+  
+          i {
+            cursor: pointer;
+            font-size: 1.25rem;
+            padding: 1rem;
+  
+          }
+        }
+  
+        .navbar-links {
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          padding: 0 2em;
           background-color: $dark;
-          opacity: 0;
-          transition: opacity 100ms linear;
+  
+  
+          .menu-item {
+            width: 100%;
+            border-bottom: 1px solid rgba($grey, 0.1);
 
-          .dropdown-item {
-            padding: 0.5em 1em;
-            margin: 0;
-
-            a{
-              font-size: 1em;
-              padding: 0;
+            .sub-menu {
               margin: 0;
-              color: $gray-text;
-
-              &:hover {
-                color: $light-text;
+              padding: 1em 1em;
+              position: absolute;
+              z-index: -1;
+              background-color: $dark;
+              opacity: 0;
+              transition: opacity 100ms linear;
+    
+              .menu-item {
+                padding: 0.5em 1em;
+                margin: 0;
+                border-bottom: none;
+    
+                a{
+                  font-size: 1em;
+                  padding: 0;
+                  margin: 0;
+                  color: $gray-text;
+    
+                  &:hover {
+                    color: $light-text;
+                  }
+                }
               }
             }
+    
+            .toggled-on {
+              position: relative;
+              z-index: 1;
+              background-color: $dark;
+              opacity: 1;          
+            }
+  
+            a {
+              padding: 0;
+            }
           }
-        }
-
-        .toggled-on {
-          position: relative;
-          z-index: 1;
-          background-color: $dark;
-          opacity: 1;          
-        }
-
-
-        .menu-item {
-          width: 100%;
-          border-bottom: 1px solid rgba($grey, 0.1);
-
-          a {
-            padding: 0;
+  
+          .account-collapsed {
+            display: block;
           }
-        }
-
-        .account-collapsed {
-          display: block;
         }
       }
-    }
-
-    .hide-overlay-nav {
-      z-index: -1;
-      background-color: $dark;
-      opacity: 0;
-      transition: opacity 200ms linear;
+  
+      .hide-overlay-nav {
+        z-index: -1;
+        background-color: $dark;
+        opacity: 0;
+        transition: opacity 200ms linear;
+      }
     }
   }
 }

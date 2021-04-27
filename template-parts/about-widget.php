@@ -7,8 +7,8 @@
  * @since Twenty Nineteen 1.0
  */
 
-if (is_active_sidebar('footer_widget')) : ?>
+if (is_active_sidebar('sidebar-3')) : ?>
 
-    <?php dynamic_sidebar('footer_widget'); ?>
+    <?php dynamic_sidebar('sidebar-3'); ?>
 
 <?php endif; ?>

@@ -1,11 +1,11 @@
 .hero-section {
   background-color: $dark;
   position: relative;
-  width: 100vw;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  overflow: scroll;
+  width: 100%;
+  
 
   color: $light-text;
 

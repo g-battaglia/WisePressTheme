@@ -1,24 +1,9 @@
-// const search = document.querySelector('.navbar-search')
-// const searchOverlay = document.querySelector('.search-overlay')
-// const closeOverlay = document.querySelector('.close-overlay')
-
-// search.addEventListener("click", function() {
-//     console.log('ok');
-//     searchOverlay.classList.toggle("hide-overlay");
-// })
-
-// closeOverlay.addEventListener("click", function() {
-//     console.log('ok');
-//     searchOverlay.classList.toggle("hide-overlay");
-// })
-
 function toggler(openIconClass, overlayClass, closeIconClass, hideClassJustName) {
   const search = document.querySelector(openIconClass)
   const searchOverlay = document.querySelector(overlayClass)
   const closeOverlay = document.querySelector(closeIconClass)
   search.addEventListener("click", function () {
-    // searchOverlay.style.height = document.documentElement.scrollHeight + "px";
-    // document.body.style.overflow = 'hidden';
+  
     document.body.classList.add('overflow-hiden')
     searchOverlay.classList.toggle(hideClassJustName);
   })
@@ -70,27 +55,6 @@ toggleDropdownMenu(".menu-item-has-children > a",
 
 // Resize fix:
 
-// window.addEventListener('resize', function() {
-//     // const navBar = document.querySelector(".under-nav")
-//     // h = document.documentElement.scrollWidth;
-//     console.log(h);
-//     if (h > 768) {
-//         // navBar.style.height = "auto"
-//         // document.body.style.overflow = 'visible';
-//     }
-
-// });
-
-
-// window.addEventListener('resize', function() {
-//     h = document.documentElement.scrollWidth;
-//     console.log(h);
-//     if ((document.body.classList.contains('overflow-hiden')) && (h > 768)) {
-//         document.body.classList.toggle('overflow-hiden');
-//     }
-
-// });
-
 window.addEventListener('resize', function () {
   h = document.documentElement.scrollWidth;
   console.log(h);
@@ -114,3 +78,13 @@ function setTopArrow() {
 }
 
 setTopArrow();
+
+
+// Deactive href for has-children anchor:
+
+const parentAnchorElement = document.querySelector('.menu-item-has-children > a');
+
+parentAnchorElement.onclick = () => {
+  parentAnchorElement.herf = "";
+  return false;
+}
