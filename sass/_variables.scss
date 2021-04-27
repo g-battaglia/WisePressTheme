@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300&display=swap');
+// font-family: 'Abril Fatface', cursive;
+// font-family: 'Lato', sans-serif;
+
+// Main Colors:
+
+$light: #f5f3f3;
+$dark: #1a1919;
+$highlight: #6eaccc;
+$highlightDark: #8291b7;
+$light-gray: rgba($dark, 0.10);
+$grey: #aaaaaa;
+$dark-gray: rgba($dark, 0.55);
+$white: #fff;
+
+// Fonts:
+$title-font: "Abril Fatface", "Merriweather", serif;
+$main-font: "Lato", sans-serif;
+$heading-font: "Merriweather", serif;
+
+// Font colors:
+$dark-text: $dark;
+$light-text: $light;
+$gray-text: $grey;
+$dark-gray-text: $dark-gray;
+
+
+// Others:
+
+$radius: 2.5px;
+$hero-radius: 10px;
+$listed-article-radius: 5px;
+$box-shadow: 1px 3px 10px rgba(
+        $color: #000000,
+        $alpha: 0.2,
+);
+
+$breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 768px,
+        lg: 992px,
+        xl: 1200px,
+        xxl: 1400px,
+);
+
+$color-transition: color 200ms linear;

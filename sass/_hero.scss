@@ -1,0 +1,200 @@
+.hero-section {
+  background-color: $dark;
+  position: relative;
+  width: 100vw;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: scroll;
+
+  color: $light-text;
+
+  .hero-articles {
+    min-height: 75vh;
+    position: relative;
+    display: grid;
+    padding-bottom: 3rem;
+    height: 100%;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "first first second second"
+      "first first third third";
+
+    .article {
+      .backdrop-article {
+        height: 100%;
+        position: relative;
+        z-index: 1;
+        background: rgba($dark, 0.55);
+        transition: background 200ms ease-in-out;
+
+        &:hover {
+          background: rgba($dark, 0.75);
+          transition: background 0.5s ease-out;
+        }
+
+        .inner-article {
+          position: absolute;
+          bottom: 0;
+          margin: 2em;
+
+          .article-category {
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            padding: 0.5em;
+            background-color: $light;
+            color: $dark-text;
+            letter-spacing: 0.1em;
+            border-radius: $radius;
+
+            a {
+              color: $dark-text;
+            }
+          }
+
+          .article-title {
+            font-size: 1.8rem;
+            padding: 1rem 0;
+
+            .article__link {
+              color: $light-text;
+            }
+          }
+
+          .article-info {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            font-size: 0.85rem;
+
+            a {
+              color: $gray-text;
+              transition: $color-transition;
+
+              &:hover {
+                color: $light-text;
+                transition: $color-transition;
+              }
+            }
+
+            .article-datetime {
+              margin-left: 0.85rem;
+            }
+          }
+        }
+      }
+    }
+
+    .first-article {
+      height: 100%;
+      min-height: 200px;
+      grid-area: first;
+      background-color: $grey;
+      background-image: url("img/hiphop.jpeg");
+      background-size: cover;
+      background-position: 50% 80%;
+      background-repeat: no-repeat;
+
+      @media screen and (min-width: map-get($breakpoints, lg) +1) {
+        border-top-left-radius: $hero-radius;
+        border-bottom-left-radius: $hero-radius;
+      }
+    }
+
+    .second-article {
+      background-color: $grey;
+      height: 100%;
+      grid-area: second;
+      background-color: $grey;
+      background-image: url("img/concert.jpeg");
+      height: 100%;
+      min-height: 200px;
+      background-size: cover;
+      background-position: 50% 80%;
+      background-repeat: no-repeat;
+
+      @media screen and (min-width: map-get($breakpoints, lg) +1) {
+        border-top-right-radius: $hero-radius;
+      }
+    }
+
+    .third-article {
+      background-color: $grey;
+      height: 100%;
+      grid-area: third;
+      background-image: url("img/books.jpeg");
+      height: 100%;
+      min-height: 200px;
+      background-size: cover;
+      background-position: 50% 80%;
+      background-repeat: no-repeat;
+      @media screen and (min-width: map-get($breakpoints, lg) +1) {
+        border-bottom-right-radius: $hero-radius;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: map-get($breakpoints, lg)) {
+  .hero-section {
+    min-height: 100vh;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+
+    .hero-articles {
+      height: 100%;
+      grid-template-areas:
+        "first first first first"
+        "first first first first"
+        "second second third third";
+      grid-template-rows: 1fr 1fr 1fr;
+
+      .first-article {
+        border-top-right-radius: $hero-radius;
+        border-top-left-radius: $hero-radius;
+      }
+
+      .second-article {
+        border-bottom-left-radius: $hero-radius;
+      }
+
+      .third-article {
+        border-bottom-right-radius: $hero-radius;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: map-get($breakpoints, md)) {
+  .hero-section {
+    min-height: -webkit-fit-content;
+    min-height: -moz-fit-content;
+    min-height: fit-content;
+    padding-top: 5em;
+
+    .hero-articles {
+      min-height: -webkit-fit-content;
+      min-height: -moz-fit-content;
+      min-height: fit-content;
+      grid-template-areas:
+        "first"
+        "second"
+        "third";
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr;
+      gap: 2em;
+
+      .article {
+        border-radius: $hero-radius;
+        min-height: 16rem;
+      }
+
+      .third-article {
+        // display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,129 @@
+.footer {
+  background-color: $dark;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  color: $light-text;
+  padding: 2em 0;
+
+  a {
+    color: $gray-text;
+
+    &:hover {
+      color: $light-text;
+    }
+  }
+
+  .inner-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .footer-top {
+      display: flex;
+      justify-content: center;
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+
+        .links-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0 4em;
+
+          .links-container__title {
+            text-transform: uppercase;
+            padding: 1em;
+            margin: 1em;
+            font-size: 1rem;
+            font-weight: 400;
+            border-bottom: 1px solid $grey;
+            text-align: center;
+            color: $gray-text;
+            width: 100%;
+            white-space: nowrap;
+          }
+
+          ul {
+            padding: 0;
+            font-weight: 250;
+            line-height: 1.5;
+            color: $gray-text;
+          }
+        }
+      }
+    }
+
+    .footer-foot {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-top: 4em;
+      white-space: nowrap;
+
+      .footer-policy {
+        padding: 1em;
+        text-align: center;
+      }
+
+      .footer-copy {
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        color: $gray-text;
+      }
+    }
+
+    .footer-arrow {
+      position: fixed;
+      right: 2em;
+      bottom: 1em;
+      height: 50px;
+      width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      background-color: black;
+      opacity: 0;
+      transition: all 200ms ease-in;
+      pointer-events: none;
+    }
+
+    .footer-arrow.active {
+      opacity: 1;
+      bottom: 2em;
+      pointer-events: auto;
+    }
+  }
+}
+
+@media screen and (max-width: map-get($breakpoints, md)) {
+  .footer {
+    .footer-top {
+      .footer-links {
+        flex-direction: column;
+      }
+    }
+
+    .inner-footer {
+      .footer-foot {
+        flex-direction: column;
+
+        .footer-policy {
+          padding: 0;
+        }
+
+        .footer-copy {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
