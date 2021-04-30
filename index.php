@@ -1,4 +1,12 @@
-<?php get_header();?>
+<?php 
+/**
+ * Main template file.
+ * 
+ * @package SimpleWise
+ */
+
+get_header();
+?>
 
 <!-- Hero Section -->
 <section class="hero-section">
@@ -75,4 +83,5 @@
   load_template($extra_section);
 ?>
 
-<?php get_footer();?>
+<?php
+get_footer();
