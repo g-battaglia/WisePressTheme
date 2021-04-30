@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Theme functions.
+ * 
+ * @package SimpleWise
+ */
+
 // Theme futures:
 function theme_features() {
     add_theme_support('title-tag');

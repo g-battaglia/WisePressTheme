@@ -1,3 +1,11 @@
+<?php
+/**
+ * Footer template.
+ * 
+ * @package SimpleWise
+ */
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

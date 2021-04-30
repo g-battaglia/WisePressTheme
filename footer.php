@@ -1,3 +1,11 @@
+<?php
+/**
+ * Footer template.
+ * 
+ * @package SimpleWise
+ */
+?>
+
 <!-- Footer -->
 <footer class="footer" id="footer">
   <div class="inner-footer container">
