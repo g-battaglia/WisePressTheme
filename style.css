@@ -203,6 +203,7 @@ a {
   }
   .navbar .main-navbar .upper-nav .navbar-utilities .navbar-user:hover .navbar-user__list .user-link {
     margin-bottom: 0.5em;
+    border-bottom: 1px solid #aaaaaa;
   }
   .navbar .main-navbar .upper-nav .navbar-utilities .navbar-user:hover .navbar-user__list .user-link a {
     color: rgba(26, 25, 25, 0.55);
@@ -214,7 +215,7 @@ a {
   }
   .navbar .main-navbar .upper-nav .navbar-utilities .navbar-user:hover .navbar-user__list .log-out {
     padding-top: 0.5em;
-    border-top: 1px solid #aaaaaa;
+    border-bottom: none;
   }
 }
 .navbar .main-navbar .under-nav {

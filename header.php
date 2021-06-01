@@ -54,8 +54,15 @@
               <i class="far fa-user"></i>
             </a>
             <ul class="navbar-user__list">
-              <li class="user-link"><a href="">Account</a></li>
-              <li class="user-link log-out"><a href="">Log out</a></li>
+              
+              <?php 
+              if (!is_user_logged_in()) {
+                echo '<li class="user-link log-out"><a href="'.wp_login_url().'">Log in</a></li>';
+              } else {
+                echo '<li class="user-link"><a href="">Account</a></li>';
+                echo '<li class="user-link log-out"><a href="'.wp_logout_url().'">Log out</a></li>';
+              }
+              ?>
 
             </ul>
           </div>
