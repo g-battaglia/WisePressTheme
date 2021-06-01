@@ -202,7 +202,7 @@ a {
     transition: all 200ms linear;
   }
   .navbar .main-navbar .upper-nav .navbar-utilities .navbar-user:hover .navbar-user__list .user-link {
-    margin-bottom: 0.5em;
+    padding-bottom: 0.5em;
     border-bottom: 1px solid #aaaaaa;
   }
   .navbar .main-navbar .upper-nav .navbar-utilities .navbar-user:hover .navbar-user__list .user-link a {
@@ -214,7 +214,9 @@ a {
     transition: color 200ms linear;
   }
   .navbar .main-navbar .upper-nav .navbar-utilities .navbar-user:hover .navbar-user__list .log-out {
-    padding-top: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    padding-bottom: 0;
     border-bottom: none;
   }
 }

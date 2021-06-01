@@ -57,10 +57,10 @@
               
               <?php 
               if (!is_user_logged_in()) {
-                echo '<li class="user-link log-out"><a href="'.wp_login_url().'">Log in</a></li>';
+                echo '<li class="user-link log-out"><a href="'.wp_login_url(home_url()).'">Log in</a></li>';
               } else {
-                echo '<li class="user-link"><a href="">Account</a></li>';
-                echo '<li class="user-link log-out"><a href="'.wp_logout_url().'">Log out</a></li>';
+                echo '<li class="user-link"><a href="'.admin_url().'">Account</a></li>';
+                echo '<li class="user-link log-out"><a href="'.wp_logout_url(home_url()).'">Log out</a></li>';
               }
               ?>
 
