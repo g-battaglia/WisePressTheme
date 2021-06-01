@@ -1,0 +1,19 @@
+{
+  "name": "simplewise",
+  "version": "1.0.0",
+  "description": "SimpleWise wordpress theme",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/g-battaglia/Wordpres-SimpleWise.git"
+  },
+  "author": "Giacomo Battaglia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/g-battaglia/Wordpres-SimpleWise/issues"
+  },
+  "homepage": "https://github.com/g-battaglia/Wordpres-SimpleWise#readme"
+}

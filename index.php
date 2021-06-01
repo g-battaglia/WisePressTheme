@@ -1,5 +1,5 @@
 <?php
-
+//! add: get_day_link()
 /**
  * Main template file.
  * 
@@ -23,20 +23,16 @@ get_header();
       'post_status' => 'publish'
     );
     $query = new WP_Query($hero_args);
-    $counter = 0;
-    $class_name = '';
     if ($query->have_posts()) :
       while ($query->have_posts()) : $query->the_post();
     ?>
-        <!-- <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-        <img src="<?php the_post_thumbnail_url(); ?>" alt="Eror"> -->
-        
+
         <div class="article" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
-          <div class="backdrop-article" >
+          <div class="backdrop-article">
             <div class="inner-article">
               <span class="article-category">
                 <a class="category__link" href="">
-                <?php the_category(); ?> 
+                  <?php the_category(); ?>
                 </a>
               </span>
               <h2 class="article-title">

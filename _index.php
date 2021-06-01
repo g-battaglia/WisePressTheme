@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 /**
  * Main template file.
  * 
@@ -14,11 +15,11 @@ get_header();
     <div class="article first-article">
       <div class="backdrop-article">
         <div class="inner-article">
-                        <span class="article-category">
-                            <a class="category__link" href="">
-                                Music
-                            </a>
-                        </span>
+          <span class="article-category">
+            <a class="category__link" href="">
+              Music
+            </a>
+          </span>
           <h2 class="article-title">
             <a class="article__link" href="">
               Hip hop new albums
@@ -35,11 +36,11 @@ get_header();
     <div class="article second-article">
       <div class="backdrop-article">
         <div class="inner-article">
-                        <span class="article-category">
-                            <a class="category__link" href="">
-                                Lifestyle
-                            </a>
-                        </span>
+          <span class="article-category">
+            <a class="category__link" href="">
+              Lifestyle
+            </a>
+          </span>
           <h2 class="article-title">
             <a class="article__link" href="">
               Live music in LA
@@ -56,11 +57,11 @@ get_header();
     <div class="article third-article">
       <div class="backdrop-article">
         <div class="inner-article">
-                        <span class="article-category">
-                            <a class="category__link" href="">
-                                Culture
-                            </a>
-                        </span>
+          <span class="article-category">
+            <a class="category__link" href="">
+              Culture
+            </a>
+          </span>
           <h2 class="article-title">
             <a class="article__link" href="">
               Best books to read while drinking coffe
@@ -81,8 +82,8 @@ get_header();
 <!-- End Hero Section -->
 
 <?php
-  $extra_section = locate_template('extra-section.php');
-  load_template($extra_section);
+$extra_section = locate_template('extra-section.php');
+load_template($extra_section);
 ?>
 
 <?php

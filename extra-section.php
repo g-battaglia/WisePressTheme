@@ -1,102 +1,86 @@
 <!-- Extra Section  -->
 <section class="extra-section container">
+
   <div class="extra-popular">
     <h4 class="extra-title">
-      Popular post
+      Recent post
     </h4>
     <div class="extra-popular__articles">
       <div class="extra-popular__div extra-popular__all">
-        <article class="extra-popular__article">
-          <div class="extra-article__img">
+        <?php
 
-          </div>
-          <h5 class="extra-article-title">
-            <a class="extra-article__link" href="">
-              Hip hop new albums
-            </a>
-          </h5>
-          <ul class="extra-article-info">
-            <li class="extra-article-author"><a class="article-author__link" href="">John Smith</a></li>
-            <li class="extra-article-datetime">Jenuary 20, 2021</li>
-          </ul>
-        </article>
+        $extra_all_args = array(
+          'posts_per_page' => 3, /* how many post you need to display */
+          'offset' => 0,
+          'orderby' => 'post_date',
+          'order' => 'DESC',
+          'post_type' => 'post', /* your post type name */
+          'post_status' => 'publish'
+        );
+        $query = new WP_Query($extra_all_args);
+        if ($query->have_posts()) :
+          while ($query->have_posts()) : $query->the_post();
+        ?>
+            <article class="extra-popular__article">
+              <div class="extra-article__img" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
 
-        <article class="extra-popular__article">
-          <div class="extra-article__img">
+              </div>
+              <h5 class="extra-article-title">
+                <a class="extra-article__link" href="<?php the_permalink() ?>">
+                <?php the_title(); ?>
+                </a>
+              </h5>
+              <ul class="extra-article-info">
+                <li class="extra-article-author"><a class="article-author__link" href=""><?php the_author() ?></a></li>
+                <li class="extra-article-datetime"><?php the_date() ?></li>
+              </ul>
+            </article>
+            
 
-          </div>
-          <h5 class="extra-article-title">
-            <a class="article__link" href="">
-              Hip hop new albums
-            </a>
-          </h5>
-          <ul class="extra-article-info">
-            <li class="extra-article-author"><a class="article-author__link" href="">John Smith</a></li>
-            <li class="extra-article-datetime">Jenuary 20, 2021</li>
-          </ul>
-        </article>
+        <?php
+          endwhile;
+        endif;
 
-        <article class="extra-popular__article">
-          <div class="extra-article__img">
+        ?>
 
-          </div>
-          <h5 class="extra-article-title">
-            <a class="article__link" href="">
-              Hip hop new albums
-            </a>
-          </h5>
-          <ul class="extra-article-info">
-            <li class="extra-article-author"><a class="article-author__link" href="">John Smith</a></li>
-            <li class="extra-article-datetime">Jenuary 20, 2021</li>
-          </ul>
-        </article>
 
       </div>
       <div class="extra-popular__div extra-popular__xl">
-        <article class="extra-popular__article">
-          <div class="extra-article__img">
+      <?php
 
-          </div>
-          <h5 class="extra-article-title">
-            <a class="extra-article__link" href="">
-              Hip hop new albums
-            </a>
-          </h5>
-          <ul class="extra-article-info">
-            <li class="extra-article-author"><a class="article-author__link" href="">John Smith</a></li>
-            <li class="extra-article-datetime">Jenuary 20, 2021</li>
-          </ul>
-        </article>
+$extra_all_args = array(
+  'posts_per_page' => 3, /* how many post you need to display */
+  'offset' => 3,
+  'orderby' => 'post_date',
+  'order' => 'DESC',
+  'post_type' => 'post', /* your post type name */
+  'post_status' => 'publish'
+);
+$query = new WP_Query($extra_all_args);
+if ($query->have_posts()) :
+  while ($query->have_posts()) : $query->the_post();
+?>
+    <article class="extra-popular__article">
+      <div class="extra-article__img" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
 
-        <article class="extra-popular__article">
-          <div class="extra-article__img">
+      </div>
+      <h5 class="extra-article-title">
+        <a class="extra-article__link" href="<?php the_permalink() ?>">
+        <?php the_title(); ?>
+        </a>
+      </h5>
+      <ul class="extra-article-info">
+        <li class="extra-article-author"><a class="article-author__link" href=""><?php the_author() ?></a></li>
+        <li class="extra-article-datetime"><?php the_date() ?></li>
+      </ul>
+    </article>
+    
 
-          </div>
-          <h5 class="extra-article-title">
-            <a class="article__link" href="">
-              Hip hop new albums
-            </a>
-          </h5>
-          <ul class="extra-article-info">
-            <li class="extra-article-author"><a class="article-author__link" href="">John Smith</a></li>
-            <li class="extra-article-datetime">Jenuary 20, 2021</li>
-          </ul>
-        </article>
+<?php
+  endwhile;
+endif;
 
-        <article class="extra-popular__article">
-          <div class="extra-article__img">
-
-          </div>
-          <h5 class="extra-article-title">
-            <a class="article__link" href="">
-              Hip hop new albums
-            </a>
-          </h5>
-          <ul class="extra-article-info">
-            <li class="extra-article-author"><a class="article-author__link" href="">John Smith</a></li>
-            <li class="extra-article-datetime">Jenuary 20, 2021</li>
-          </ul>
-        </article>
+?>
 
 
       </div>
@@ -108,8 +92,8 @@
   <div class="extra-about">
 
     <?php
-        $about_widget = locate_template('template-parts/about-widget.php');
-        load_template($about_widget);
+    $about_widget = locate_template('template-parts/about-widget.php');
+    load_template($about_widget);
     ?>
     <!-- <h4 class="extra-title">
       About this blog
@@ -134,10 +118,10 @@
   </div>
 
   <div class="extra-tags">
-      <?php
-        $tag_cloud_widget = locate_template('template-parts/tag-cloud-widget.php');
-        load_template($tag_cloud_widget);
-      ?>
+    <?php
+    $tag_cloud_widget = locate_template('template-parts/tag-cloud-widget.php');
+    load_template($tag_cloud_widget);
+    ?>
   </div>
 </section>
 <!-- End Extra Section -->

@@ -19,7 +19,6 @@ get_header();
       <h2 class="title"><?php the_title(); ?></h2>
       <ul class="meta">
         <li class="date"><?php the_date('')?></li>
-        <li class="category"><a href=""><?php the_category(' ');?></a></li>
       </ul>
     </div>
 
@@ -38,10 +37,11 @@ get_header();
       <ul class="tags__list">
         <?php 
           $tags = get_the_tags();
-          $home_URL = get_home_url();
+          // print_r($tags[0]);
+          // $home_URL = get_home_url();
           if ($tags) {
             foreach ($tags as $tag) {
-              echo '<li class="tag__item"><a href="'.$home_URL.'/tag/'.$tag->slug.'">'.$tag->name.'</a></li>';
+              echo '<li class="tag__item"><a href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a></li>';
            }
           }
         ?>
@@ -50,7 +50,7 @@ get_header();
     </div>
 
     <div class="author">
-      <div class="author-pic" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/dog.jpeg');">
+      <div class="author-pic" style="background-image: url('<?php echo get_avatar_url(get_the_author_meta( 'ID' )); ?>">
 
       </div>
       <div class="author-name">
