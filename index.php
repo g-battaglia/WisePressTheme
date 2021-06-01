@@ -31,8 +31,8 @@ get_header();
         <!-- <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
         <img src="<?php the_post_thumbnail_url(); ?>" alt="Eror"> -->
         
-        <div class="article">
-          <div class="backdrop-article" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
+        <div class="article" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
+          <div class="backdrop-article" >
             <div class="inner-article">
               <span class="article-category">
                 <a class="category__link" href="">

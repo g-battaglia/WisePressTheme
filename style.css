@@ -681,14 +681,14 @@ a {
     grid-template-areas: "first first first first" "first first first first" "second second third third";
     grid-template-rows: 1fr 1fr 1fr;
   }
-  .hero-section .hero-articles .first-article {
+  .hero-section .hero-articles .article:first-child {
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
   }
-  .hero-section .hero-articles .second-article {
+  .hero-section .hero-articles .article:nth-child(2) {
     border-bottom-left-radius: 10px;
   }
-  .hero-section .hero-articles .third-article {
+  .hero-section .hero-articles .article:nth-child(3) {
     border-bottom-right-radius: 10px;
   }
 }

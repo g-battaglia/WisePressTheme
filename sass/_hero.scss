@@ -152,19 +152,21 @@
         "first first first first"
         "second second third third";
       grid-template-rows: 1fr 1fr 1fr;
-
-      .first-article {
-        border-top-right-radius: $hero-radius;
-        border-top-left-radius: $hero-radius;
+      .article {
+        &:first-child {
+          border-top-right-radius: $hero-radius;
+          border-top-left-radius: $hero-radius;
+        }
+  
+        &:nth-child(2) {
+          border-bottom-left-radius: $hero-radius;
+        }
+  
+        &:nth-child(3) {
+          border-bottom-right-radius: $hero-radius;
+        }
       }
 
-      .second-article {
-        border-bottom-left-radius: $hero-radius;
-      }
-
-      .third-article {
-        border-bottom-right-radius: $hero-radius;
-      }
     }
   }
 }
