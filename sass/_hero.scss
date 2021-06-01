@@ -5,7 +5,6 @@
   height: -moz-fit-content;
   height: fit-content;
   width: 100%;
-  
 
   color: $light-text;
 
@@ -85,55 +84,57 @@
           }
         }
       }
-    }
 
-    .first-article {
-      height: 100%;
-      min-height: 200px;
-      grid-area: first;
-      background-color: $grey;
-      background-image: url("img/hiphop.jpeg");
-      background-size: cover;
-      background-position: 50% 80%;
-      background-repeat: no-repeat;
+      &:first-child {
+        height: 100%;
+        min-height: 200px;
+        grid-area: first;
+        background-color: $grey;
+        background-image: url("img/hiphop.jpeg");
+        background-size: cover;
+        background-position: 50% 80%;
+        background-repeat: no-repeat;
 
-      @media screen and (min-width: map-get($breakpoints, lg) +1) {
-        border-top-left-radius: $hero-radius;
-        border-bottom-left-radius: $hero-radius;
+        @media screen and (min-width: map-get($breakpoints, lg) +1) {
+          border-top-left-radius: $hero-radius;
+          border-bottom-left-radius: $hero-radius;
+        }
+      }
+      &:nth-child(2) {
+        background-color: $grey;
+        height: 100%;
+        grid-area: second;
+        background-color: $grey;
+        background-image: url("img/concert.jpeg");
+        height: 100%;
+        min-height: 200px;
+        background-size: cover;
+        background-position: 50% 80%;
+        background-repeat: no-repeat;
+  
+        @media screen and (min-width: map-get($breakpoints, lg) +1) {
+          border-top-right-radius: $hero-radius;
+        }
+      }
+      &:nth-child(3) {
+        background-color: $grey;
+        height: 100%;
+        grid-area: third;
+        background-image: url("img/books.jpeg");
+        height: 100%;
+        min-height: 200px;
+        background-size: cover;
+        background-position: 50% 80%;
+        background-repeat: no-repeat;
+        @media screen and (min-width: map-get($breakpoints, lg) +1) {
+          border-bottom-right-radius: $hero-radius;
+        }
       }
     }
 
-    .second-article {
-      background-color: $grey;
-      height: 100%;
-      grid-area: second;
-      background-color: $grey;
-      background-image: url("img/concert.jpeg");
-      height: 100%;
-      min-height: 200px;
-      background-size: cover;
-      background-position: 50% 80%;
-      background-repeat: no-repeat;
 
-      @media screen and (min-width: map-get($breakpoints, lg) +1) {
-        border-top-right-radius: $hero-radius;
-      }
-    }
 
-    .third-article {
-      background-color: $grey;
-      height: 100%;
-      grid-area: third;
-      background-image: url("img/books.jpeg");
-      height: 100%;
-      min-height: 200px;
-      background-size: cover;
-      background-position: 50% 80%;
-      background-repeat: no-repeat;
-      @media screen and (min-width: map-get($breakpoints, lg) +1) {
-        border-bottom-right-radius: $hero-radius;
-      }
-    }
+
   }
 }
 

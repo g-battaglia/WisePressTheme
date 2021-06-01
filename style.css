@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
 Theme Name: Simple Wise Theme
 Theme URI: 
@@ -237,9 +238,10 @@ a {
 }
 .navbar .main-navbar .under-nav .navbar-links .menu-item {
   padding: 1.25em 0;
+  white-space: nowrap;
 }
 .navbar .main-navbar .under-nav .navbar-links .menu-item a {
-  padding: 1.25em 2em;
+  padding: 1.25em 1em;
   transition: color 200ms linear;
 }
 .navbar .main-navbar .under-nav .navbar-links .menu-item a:hover {
@@ -274,6 +276,9 @@ a {
 .navbar .main-navbar .under-nav .navbar-links .menu-item .sub-menu a:hover {
   color: transparent;
   transition: color 200ms linear;
+}
+.navbar .main-navbar .under-nav .navbar-links .account-item {
+  display: none;
 }
 .navbar .main-navbar .under-nav .navbar-links .menu-item-has-children i {
   font-size: 0.5em;
@@ -512,6 +517,19 @@ a {
   .navbar .main-navbar .under-nav .navbar-links .menu-item a {
     padding: 0;
   }
+  .navbar .main-navbar .under-nav .navbar-links .menu-item-has-children::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "";
+    color: gray;
+    margin-right: 1rem;
+  }
+  .navbar .main-navbar .under-nav .navbar-links .account-item {
+    display: inline-block;
+  }
+  .navbar .main-navbar .under-nav .navbar-links .account-item a i {
+    padding: 0 1em 0 0;
+  }
   .navbar .main-navbar .under-nav .navbar-links .account-collapsed {
     display: block;
   }
@@ -601,7 +619,7 @@ a {
 .hero-section .hero-articles .article .backdrop-article .inner-article .article-info .article-datetime {
   margin-left: 0.85rem;
 }
-.hero-section .hero-articles .first-article {
+.hero-section .hero-articles .article:first-child {
   height: 100%;
   min-height: 200px;
   grid-area: first;
@@ -612,12 +630,12 @@ a {
   background-repeat: no-repeat;
 }
 @media screen and (min-width: 993px) {
-  .hero-section .hero-articles .first-article {
+  .hero-section .hero-articles .article:first-child {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
 }
-.hero-section .hero-articles .second-article {
+.hero-section .hero-articles .article:nth-child(2) {
   background-color: #aaaaaa;
   height: 100%;
   grid-area: second;
@@ -630,11 +648,11 @@ a {
   background-repeat: no-repeat;
 }
 @media screen and (min-width: 993px) {
-  .hero-section .hero-articles .second-article {
+  .hero-section .hero-articles .article:nth-child(2) {
     border-top-right-radius: 10px;
   }
 }
-.hero-section .hero-articles .third-article {
+.hero-section .hero-articles .article:nth-child(3) {
   background-color: #aaaaaa;
   height: 100%;
   grid-area: third;
@@ -646,7 +664,7 @@ a {
   background-repeat: no-repeat;
 }
 @media screen and (min-width: 993px) {
-  .hero-section .hero-articles .third-article {
+  .hero-section .hero-articles .article:nth-child(3) {
     border-bottom-right-radius: 10px;
   }
 }

@@ -126,3 +126,30 @@ function footer_widgets_init()
 
 }
 add_action('widgets_init', 'footer_widgets_init');
+
+// Last 3 post:
+function latest_post() {
+
+    $args = array(
+        'posts_per_page' => 3, /* how many post you need to display */
+        'offset' => 0,
+        'orderby' => 'post_date',
+        'order' => 'DESC',
+        'post_type' => 'post', /* your post type name */
+        'post_status' => 'publish'
+    );
+    $query = new WP_Query($args);
+    if ($query->have_posts()) :
+        while ($query->have_posts()) : $query->the_post();
+            ?>
+            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+            <?php echo get_the_post_thumbnail('thumbnail'); ?>
+            <img src="<?php the_post_thumbnail_url(); ?>" alt="Eror">
+             <!-- here add code what you need to display like above title, image and more  -->
+            <?php
+        endwhile;
+    endif;
+}
+
+add_shortcode('lastest-post', 'latest_post');
+# echo do_shortcode('[lastest-post]');

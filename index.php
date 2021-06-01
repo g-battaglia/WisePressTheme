@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 /**
  * Main template file.
  * 
@@ -11,14 +12,60 @@ get_header();
 <!-- Hero Section -->
 <section class="hero-section">
   <div class="hero-articles container" data-aos="fade-right">
-    <div class="article first-article">
+    <?php
+
+    $args = array(
+      'posts_per_page' => 3, /* how many post you need to display */
+      'offset' => 0,
+      'orderby' => 'post_date',
+      'order' => 'DESC',
+      'post_type' => 'post', /* your post type name */
+      'post_status' => 'publish'
+    );
+    $query = new WP_Query($args);
+    $counter = 0;
+    $class_name = '';
+    if ($query->have_posts()) :
+      while ($query->have_posts()) : $query->the_post();
+    ?>
+        <!-- <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+        <img src="<?php the_post_thumbnail_url(); ?>" alt="Eror"> -->
+        
+        <div class="article">
+          <div class="backdrop-article" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
+            <div class="inner-article">
+              <span class="article-category">
+                <a class="category__link" href="">
+                <?php the_category(); ?> 
+                </a>
+              </span>
+              <h2 class="article-title">
+                <a class="article__link" href="<?php the_permalink(); ?>">
+                  <?php the_title(); ?>
+                </a>
+              </h2>
+              <ul class="article-info">
+                <li class="article-author"><a class="article-author__link" href="">John Smith</a></li>
+                <li class="article-datetime">Jenuary 20, 2021</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+        <!-- here add code what you need to display like above title, image and more  -->
+    <?php
+      endwhile;
+    endif;
+
+    ?>
+    <!-- <div class="article first-article">
       <div class="backdrop-article">
         <div class="inner-article">
-                        <span class="article-category">
-                            <a class="category__link" href="">
-                                Music
-                            </a>
-                        </span>
+          <span class="article-category">
+            <a class="category__link" href="">
+              Music
+            </a>
+          </span>
           <h2 class="article-title">
             <a class="article__link" href="">
               Hip hop new albums
@@ -35,11 +82,11 @@ get_header();
     <div class="article second-article">
       <div class="backdrop-article">
         <div class="inner-article">
-                        <span class="article-category">
-                            <a class="category__link" href="">
-                                Lifestyle
-                            </a>
-                        </span>
+          <span class="article-category">
+            <a class="category__link" href="">
+              Lifestyle
+            </a>
+          </span>
           <h2 class="article-title">
             <a class="article__link" href="">
               Live music in LA
@@ -56,11 +103,11 @@ get_header();
     <div class="article third-article">
       <div class="backdrop-article">
         <div class="inner-article">
-                        <span class="article-category">
-                            <a class="category__link" href="">
-                                Culture
-                            </a>
-                        </span>
+          <span class="article-category">
+            <a class="category__link" href="">
+              Culture
+            </a>
+          </span>
           <h2 class="article-title">
             <a class="article__link" href="">
               Best books to read while drinking coffe
@@ -72,15 +119,17 @@ get_header();
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
+
 </section>
+
 <!-- End Hero Section -->
 
 <?php
-  $extra_section = locate_template('extra-section.php');
-  load_template($extra_section);
+$extra_section = locate_template('extra-section.php');
+load_template($extra_section);
 ?>
 
 <?php

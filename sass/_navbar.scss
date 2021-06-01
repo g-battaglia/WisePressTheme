@@ -20,7 +20,7 @@
         font-size: 1.25rem;
         display: flex;
         align-items: center;
-        
+
         :not(.custom-html-widget *) {
           display: none;
         }
@@ -42,8 +42,6 @@
           }
         }
       }
-
-
 
       .navbar-brand {
         font-family: $title-font;
@@ -144,7 +142,6 @@
                   margin-bottom: 0.5em;
                   padding-bottom: 0;
                   border-bottom: none;
-                  
                 }
               }
             }
@@ -172,9 +169,10 @@
 
         .menu-item {
           padding: 1.25em 0;
+          white-space: nowrap;
 
           a {
-            padding: 1.25em 2em;
+            padding: 1.25em 1em;
             transition: color 200ms linear;
 
             &:hover {
@@ -218,6 +216,10 @@
               }
             }
           }
+        }
+
+        .account-item {
+          display: none;
         }
 
         .menu-item-has-children {
@@ -509,6 +511,24 @@
 
             a {
               padding: 0;
+            }
+          }
+
+          .menu-item-has-children {
+            &::before {
+              font-family: "Font Awesome 5 Free";
+              font-weight: 900;
+              content: "\f078";
+              color: gray;
+              margin-right: 1rem;
+            }
+          }
+          .account-item {
+            display: inline-block;
+            a {
+              i {
+                padding: 0 1em 0 0;
+              }
             }
           }
 
