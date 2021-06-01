@@ -41,7 +41,7 @@
           <a href=""><i class="fab fa-twitter"></i></a> 
           -->
         </div>
-        <h1 class="navbar-brand"><a href="">Brand</a></h1>
+        <h1 class="navbar-brand"><a href="<?php echo get_home_url(); ?>"><?php echo get_bloginfo($show = 'name'); ?></a></h1>
         <div class="navbar-utilities">
           <div class="navbar-search">
             <a href="#">
@@ -114,7 +114,7 @@
   <div class="search-overlay hide-overlay">
     <i class="fas fa-times close-overlay"></i>
     <div class="inner-search">
-      <form action="/articles_list.html" class="search__form">
+      <form action="" class="search__form">
         <span class="search-title">Search for:</span>
         <input autocomplete="off" class="search-field" name="s" placeholder="Type Keywords" title="Search for:"
                type="search"

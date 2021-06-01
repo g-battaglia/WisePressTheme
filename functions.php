@@ -10,6 +10,7 @@
 function theme_features() {
     add_theme_support('title-tag');
     add_theme_support('widgets');
+    add_theme_support( 'post-thumbnails' );
 
     // Navbar Menu:
     register_nav_menu('navbar_menu', 'Heading navbar menu location');
