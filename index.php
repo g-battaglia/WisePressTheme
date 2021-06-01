@@ -14,7 +14,7 @@ get_header();
   <div class="hero-articles container" data-aos="fade-right">
     <?php
 
-    $args = array(
+    $hero_args = array(
       'posts_per_page' => 3, /* how many post you need to display */
       'offset' => 0,
       'orderby' => 'post_date',
@@ -22,7 +22,7 @@ get_header();
       'post_type' => 'post', /* your post type name */
       'post_status' => 'publish'
     );
-    $query = new WP_Query($args);
+    $query = new WP_Query($hero_args);
     $counter = 0;
     $class_name = '';
     if ($query->have_posts()) :
@@ -45,8 +45,8 @@ get_header();
                 </a>
               </h2>
               <ul class="article-info">
-                <li class="article-author"><a class="article-author__link" href="">John Smith</a></li>
-                <li class="article-datetime">Jenuary 20, 2021</li>
+                <li class="article-author"><a class="article-author__link" href=""><?php the_author(); ?></a></li>
+                <li class="article-datetime"><?php the_date(); ?></li>
               </ul>
             </div>
           </div>
