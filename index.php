@@ -1,9 +1,8 @@
 <?php
-//! add: get_day_link()
 /**
  * Main template file.
  * 
- * @package SimpleWise
+ * @package WisePressTheme
  */
 
 get_header();

@@ -3,7 +3,7 @@
 /**
  * Theme functions.
  * 
- * @package SimpleWise
+ * @package WisePressTheme
  */
 
 // Theme futures:
