@@ -3,6 +3,7 @@
 Theme Name: Simple Wise Theme
 Theme URI: 
 Author: Giacomo Battaglia
+Version: 0.1
 */
 /* latin-ext */
 @font-face {
@@ -583,20 +584,19 @@ a {
   padding: 0.75em 0;
   font-size: 0.95rem;
   border-radius: 2.5px;
-  transition: all 200ms linear, z-index 1ms;
+  transition: margin 200ms linear;
 }
 .navbar .main-navbar .under-nav .navbar-links .menu-item .sub-menu .menu-item {
   padding: 0.5em 0.5em;
 }
 .navbar .main-navbar .under-nav .navbar-links .menu-item .sub-menu a {
-  padding: 0;
+  padding: 0 1em;
   display: inline-block;
   color: transparent;
   transition: color 200ms linear;
 }
 .navbar .main-navbar .under-nav .navbar-links .menu-item .sub-menu a:hover {
   color: transparent;
-  transition: color 200ms linear;
 }
 .navbar .main-navbar .under-nav .navbar-links .account-item {
   display: none;
@@ -626,11 +626,6 @@ a {
     z-index: 100;
     background-color: #f5f3f3;
     box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.2);
-    margin-left: 1em;
-    padding: 0.75em 0;
-    font-size: 0.95rem;
-    border-radius: 2.5px;
-    transition: all 200ms linear, z-index 1ms;
   }
   .navbar .main-navbar .under-nav .navbar-links .menu-item-has-children:hover .sub-menu .menu-item-has-children {
     padding: 0.5em 0.5em;
@@ -642,7 +637,6 @@ a {
   }
   .navbar .main-navbar .under-nav .navbar-links .menu-item-has-children:hover .sub-menu a:hover {
     color: #1a1919;
-    transition: color 200ms linear;
   }
   .navbar .main-navbar .under-nav .navbar-links .menu-item-has-children:hover .sub-menu a:hover i {
     transform: rotate(180deg);
@@ -1173,6 +1167,14 @@ a {
   flex-direction: row;
   padding: 1em 0;
   color: rgba(26, 25, 25, 0.55);
+}
+.single-article .article-content .header .meta .date a {
+  color: rgba(26, 25, 25, 0.55);
+  margin: 0;
+  padding: 0;
+}
+.single-article .article-content .header .meta .date a:hover {
+  color: #1a1919;
 }
 .single-article .article-content .header .meta .category {
   margin-left: 1ch;

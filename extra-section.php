@@ -8,10 +8,13 @@
     <div class="extra-popular__articles">
       <div class="extra-popular__div extra-popular__all">
         <?php
-
+        $offest_add = 0;
+        if (is_front_page()) {
+          $offest_add = 3;
+        }
         $extra_all_args = array(
           'posts_per_page' => 3, /* how many post you need to display */
-          'offset' => 0,
+          'offset' => 0 + $offest_add,
           'orderby' => 'post_date',
           'order' => 'DESC',
           'post_type' => 'post', /* your post type name */
@@ -20,6 +23,9 @@
         $query = new WP_Query($extra_all_args);
         if ($query->have_posts()) :
           while ($query->have_posts()) : $query->the_post();
+            $archive_year  = get_the_time('Y');
+            $archive_month = get_the_time('m');
+            $archive_day   = get_the_time('d');
         ?>
             <article class="extra-popular__article">
               <div class="extra-article__img" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
@@ -27,60 +33,62 @@
               </div>
               <h5 class="extra-article-title">
                 <a class="extra-article__link" href="<?php the_permalink() ?>">
-                <?php the_title(); ?>
+                  <?php the_title(); ?>
                 </a>
               </h5>
               <ul class="extra-article-info">
                 <li class="extra-article-author"><a class="article-author__link" href=""><?php the_author() ?></a></li>
-                <li class="extra-article-datetime"><?php the_date() ?></li>
+                <li class="extra-article-datetime"><a href="<?php echo get_day_link($archive_year, $archive_month, $archive_day); ?>"><?php the_date(); ?></a></li>
               </ul>
             </article>
-            
+
+
+        <?php
+          endwhile;
+        endif;
+        ?>
+
+
+      </div>
+      <div class="extra-popular__div extra-popular__xl">
+        <?php
+
+        $extra_all_args = array(
+          'posts_per_page' => 3, /* how many post you need to display */
+          'offset' => 3 + $offest_add,
+          'orderby' => 'post_date',
+          'order' => 'DESC',
+          'post_type' => 'post', /* your post type name */
+          'post_status' => 'publish'
+        );
+        $query = new WP_Query($extra_all_args);
+        if ($query->have_posts()) :
+          while ($query->have_posts()) : $query->the_post();
+            $archive_year  = get_the_time('Y');
+            $archive_month = get_the_time('m');
+            $archive_day   = get_the_time('d');
+        ?>
+            <article class="extra-popular__article">
+              <div class="extra-article__img" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
+
+              </div>
+              <h5 class="extra-article-title">
+                <a class="extra-article__link" href="<?php the_permalink() ?>">
+                  <?php the_title(); ?>
+                </a>
+              </h5>
+              <ul class="extra-article-info">
+                <li class="extra-article-author"><a class="article-author__link" href=""><?php the_author() ?></a></li>
+                <li class="extra-article-datetime"><a href="<?php echo get_day_link($archive_year, $archive_month, $archive_day); ?>"><?php the_date(); ?></a></li>
+              </ul>
+            </article>
+
 
         <?php
           endwhile;
         endif;
 
         ?>
-
-
-      </div>
-      <div class="extra-popular__div extra-popular__xl">
-      <?php
-
-$extra_all_args = array(
-  'posts_per_page' => 3, /* how many post you need to display */
-  'offset' => 3,
-  'orderby' => 'post_date',
-  'order' => 'DESC',
-  'post_type' => 'post', /* your post type name */
-  'post_status' => 'publish'
-);
-$query = new WP_Query($extra_all_args);
-if ($query->have_posts()) :
-  while ($query->have_posts()) : $query->the_post();
-?>
-    <article class="extra-popular__article">
-      <div class="extra-article__img" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
-
-      </div>
-      <h5 class="extra-article-title">
-        <a class="extra-article__link" href="<?php the_permalink() ?>">
-        <?php the_title(); ?>
-        </a>
-      </h5>
-      <ul class="extra-article-info">
-        <li class="extra-article-author"><a class="article-author__link" href=""><?php the_author() ?></a></li>
-        <li class="extra-article-datetime"><?php the_date() ?></li>
-      </ul>
-    </article>
-    
-
-<?php
-  endwhile;
-endif;
-
-?>
 
 
       </div>

@@ -198,21 +198,21 @@
             padding: 0.75em 0;
             font-size: 0.95rem;
             border-radius: $radius;
-            transition: all 200ms linear, z-index 1ms;
+            transition: margin 200ms linear;
 
             .menu-item {
               padding: 0.5em 0.5em;
             }
 
             a {
-              padding: 0;
+              padding: 0 1em;
               display: inline-block;
               color: transparent;
               transition: color 200ms linear;
 
               &:hover {
                 color: transparent;
-                transition: color 200ms linear;
+                // transition: color 200ms linear;
               }
             }
           }
@@ -254,11 +254,10 @@
                 z-index: 100;
                 background-color: $light;
                 box-shadow: $box-shadow;
-                margin-left: 1em;
-                padding: 0.75em 0;
-                font-size: 0.95rem;
-                border-radius: $radius;
-                transition: all 200ms linear, z-index 1ms;
+                // margin-left: 1em;
+                // padding: 0.75em 0;
+                // font-size: 0.95rem;
+                // border-radius: $radius;
 
                 .menu-item-has-children {
                   padding: 0.5em 0.5em;
@@ -271,7 +270,7 @@
 
                   &:hover {
                     color: $dark-text;
-                    transition: color 200ms linear;
+                    // transition: color 200ms linear;
 
                     i {
                       transform: rotate(180deg);

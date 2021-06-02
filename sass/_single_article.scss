@@ -29,6 +29,17 @@
         padding: 1em 0;
         color: $dark-gray;
 
+        .date {
+          a {
+            color: $dark-gray;
+            margin: 0;
+            padding: 0;
+            &:hover {
+              color: $dark;
+            }
+          }
+        }
+
         .category {
           margin-left: 1ch;
         }
