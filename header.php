@@ -3,7 +3,7 @@
 /**
  * Footer template.
  * 
- * @package SimpleWise
+ * @package WisePressTheme
  */
 ?>
 
@@ -19,7 +19,7 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"> <!-- AOS Library -->
 
   <script defer src="<?php echo get_template_directory_uri(); ?>/script.js"></script>
-  <title>SimpleWise Theme</title>
+  <title><?php echo get_bloginfo($show = 'name'); ?></title>
 
 </head>
 
