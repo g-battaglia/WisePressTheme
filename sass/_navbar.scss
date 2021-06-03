@@ -236,8 +236,6 @@
             }
           }
 
-
-
           // https://stackoverflow.com/questions/31433000/how-do-i-disable-css-hover-in-a-media-query
           @media screen and (min-width: map-get($breakpoints, md) + 1) {
             &:hover {
@@ -318,7 +316,7 @@
   }
 
   .inner-search {
-    .search__form {
+    form {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -326,8 +324,14 @@
       width: 100vw;
       max-width: 800px;
       padding: 0 2rem;
-
-      .search-title {
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      label {
+        display: inline-block;
         font-size: 1rem;
         text-transform: uppercase;
         letter-spacing: 2px;
@@ -348,6 +352,10 @@
 
         outline: none;
         color: $light-text;
+
+        &[type="submit"] {
+          display: none;
+        }
       }
 
       ::-webkit-input-placeholder {
@@ -523,14 +531,13 @@
           }
 
           .menu-item-has-children {
-            
             &::before {
               font-family: "Font Awesome 5 Free";
               font-weight: 900;
               content: "\f078";
               color: gray;
               margin-right: 1rem;
-              font-size: .75rem;
+              font-size: 0.75rem;
             }
           }
           .account-item {

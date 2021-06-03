@@ -58,7 +58,7 @@ get_header();
 
           </div>
           <div class="author-name">
-            <h4 class="name"><a href=""><?php the_author(''); ?></a></h4>
+            <h4 class="name"><a href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>"><?php the_author(''); ?></a></h4>
           </div>
         </div>
       </article>

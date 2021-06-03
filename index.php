@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Main template file.
  * 
@@ -24,9 +25,9 @@ get_header();
     $query = new WP_Query($hero_args);
     if ($query->have_posts()) :
       while ($query->have_posts()) : $query->the_post();
-      $archive_year  = get_the_time( 'Y' ); 
-      $archive_month = get_the_time( 'm' ); 
-      $archive_day   = get_the_time( 'd' );  
+        $archive_year  = get_the_time('Y');
+        $archive_month = get_the_time('m');
+        $archive_day   = get_the_time('d');
     ?>
 
         <div class="article" style="background-image: url('<?php the_post_thumbnail_url(); ?>');">
@@ -43,8 +44,8 @@ get_header();
                 </a>
               </h2>
               <ul class="article-info">
-                <li class="article-author"><a class="article-author__link" href=""><?php the_author(); ?></a></li>
-                <li class="article-datetime"><a href="<?php echo get_day_link( $archive_year, $archive_month, $archive_day ); ?>"><?php the_date(); ?></a></li>
+                <li class="article-author"><a class="article-author__link" href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>"><?php the_author(); ?></a></li>
+                <li class="article-datetime"><a href="<?php echo get_day_link($archive_year, $archive_month, $archive_day); ?>"><?php the_date(); ?></a></li>
               </ul>
             </div>
           </div>

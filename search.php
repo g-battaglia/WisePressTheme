@@ -14,8 +14,8 @@ get_header();
 
 <section class="articles-list-section">
   <div class="articles-list__header container">
-    <h2><?php echo get_the_archive_title(); ?></h2>
-    <p>Here the list of all the articles</p>
+    <h2>Search Results For: <?php the_search_query(); ?></h2>
+    <p>Here the list of all the results</p>
   </div>
   <div class="articles-list-container container">
     <?php

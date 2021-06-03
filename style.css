@@ -673,7 +673,7 @@ a {
   font-size: 1.25rem;
   padding: 1em;
 }
-.search-overlay .inner-search .search__form {
+.search-overlay .inner-search form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -682,13 +682,20 @@ a {
   max-width: 800px;
   padding: 0 2rem;
 }
-.search-overlay .inner-search .search__form .search-title {
+.search-overlay .inner-search form div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.search-overlay .inner-search form label {
+  display: inline-block;
   font-size: 1rem;
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 2rem;
 }
-.search-overlay .inner-search .search__form input {
+.search-overlay .inner-search form input {
   -webkit-appearance: none;
   font-size: 2.5rem;
   padding: 1rem;
@@ -702,19 +709,22 @@ a {
   outline: none;
   color: #f5f3f3;
 }
-.search-overlay .inner-search .search__form ::-webkit-input-placeholder {
+.search-overlay .inner-search form input[type=submit] {
+  display: none;
+}
+.search-overlay .inner-search form ::-webkit-input-placeholder {
   color: #aaaaaa;
 }
-.search-overlay .inner-search .search__form ::-moz-placeholder {
+.search-overlay .inner-search form ::-moz-placeholder {
   color: #aaaaaa;
 }
-.search-overlay .inner-search .search__form :-ms-input-placeholder {
+.search-overlay .inner-search form :-ms-input-placeholder {
   color: #aaaaaa;
 }
-.search-overlay .inner-search .search__form ::-ms-input-placeholder {
+.search-overlay .inner-search form ::-ms-input-placeholder {
   color: #aaaaaa;
 }
-.search-overlay .inner-search .search__form ::placeholder {
+.search-overlay .inner-search form ::placeholder {
   color: #aaaaaa;
 }
 .search-overlay .inner-search .search-hint {
@@ -1052,6 +1062,7 @@ a {
 }
 .articles-list-section .articles-list__header h2 {
   text-align: center;
+  margin-bottom: 0.5rem;
 }
 .articles-list-section .articles-list-container {
   padding: 0;

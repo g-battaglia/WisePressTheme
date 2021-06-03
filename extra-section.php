@@ -37,7 +37,8 @@
                 </a>
               </h5>
               <ul class="extra-article-info">
-                <li class="extra-article-author"><a class="article-author__link" href=""><?php the_author() ?></a></li>
+
+                <li class="extra-article-author"><a class="article-author__link" href="<?php echo get_author_posts_url(get_the_author_meta('ID')) ?>"><?php the_author() ?></a></li>
                 <li class="extra-article-datetime"><a href="<?php echo get_day_link($archive_year, $archive_month, $archive_day); ?>"><?php the_date(); ?></a></li>
               </ul>
             </article>

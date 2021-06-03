@@ -86,7 +86,7 @@
             if (!is_user_logged_in()) {
               echo '<li class="menu-item account-item"><a href="' . wp_login_url(home_url()) . '"><i class="fas fa-sign-in-alt"></i>Log in</a></li>';
             } else {
-              echo '<li class="menu-item account-item"><a href="'.admin_url().'"><i class="far fa-user"></i>Account</a></li>';
+              echo '<li class="menu-item account-item"><a href="' . admin_url() . '"><i class="far fa-user"></i>Account</a></li>';
               echo '<li class="menu-item account-item"><a href="' . wp_logout_url(home_url()) . '"><i class="fas fa-sign-in-alt"></i>Log out</a></li>';
             }
             ?>
@@ -130,10 +130,11 @@
     <div class="search-overlay hide-overlay">
       <i class="fas fa-times close-overlay"></i>
       <div class="inner-search">
-        <form action="" class="search__form">
+        <?php get_search_form(); ?>
+        <!-- <form action="" class="search__form">
           <span class="search-title">Search for:</span>
           <input autocomplete="off" class="search-field" name="s" placeholder="Type Keywords" title="Search for:" type="search" value="">
-        </form>
+        </form> -->
         <small class="search-hint">Please Enter to begin your search.</small>
       </div>
 
