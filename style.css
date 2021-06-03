@@ -1,10 +1,21 @@
 @charset "UTF-8";
-/*
-Theme Name: Wise Press Theme
+/**
+Theme Name: WisePress
 Theme URI: 
 Author: Giacomo Battaglia
-Version: 0.1
+Author URI: https://github.com/g-battaglia
 Desription: Elegant and wise looking wordpress theme for magazines, newspapers and personal blogs.
+Version: 1.0
+Requires at least: 5.3
+Tested up to: 5.7.2
+Requires PHP: 5.3
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Tags: custom-menu, custom-logo, entertainment, one-column, two-columns,  editor-style, featured-images, full-width-template, microformats, post-formats, theme-options, blog, magazine, newspaper
+WisePress WordPress Theme, Copyright 2020 Giacomo Battaglia.
+WisePress is distributed under the terms of the GNU GPL.
+
+
 */
 /* latin-ext */
 @font-face {
@@ -1327,6 +1338,17 @@ a {
   width: 100vw;
   height: 25vh;
   background-color: rgba(26, 25, 25, 0.1);
+}
+
+.error_404 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.error_404 h6 {
+  font-size: 10rem;
+  padding: 2.5rem;
+  color: #aaaaaa;
 }
 
 .extra-section {
