@@ -1,2 +1,3 @@
-# SimpleWise Wordpress Theme
+# WisePress Theme
+
 A simple wordpress theme.
