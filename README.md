@@ -1,3 +1,5 @@
 # WisePress Theme
 
-A simple wordpress theme.
+Wordpress theme excellent for Magazines and Newspapers.
+
+Live preview: http://centuryboy.altervista.org/wordpress/
